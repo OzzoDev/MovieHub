@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A large library for discovering movies" />
     <title>Movie Hub</title>
+    <link rel="stylesheet" href="hamburger.css" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
@@ -12,13 +13,35 @@
     <header>
       <!-- code -->
       <!-- <img src="res/header-img-small/header-s-1.webp" alt="dark colored wallpappers" class="header-image" /> -->
-      <div class="header-image"></div>
-      <section class="header-text">
-        <h1 class="animate__animated animate__fadeInLeft">Movie Hub</h1>
-        <p class="animate__animated animate__fadeInUp">Discover a vast collection of movies, explore genres and find your next favorite film today</p>
-      </section>
+
+      <nav>
+        <a href="#"><img src="/res/icons/logo.png" alt="logo illustrated by a old cinema projector" /></a>
+        <div class="icon nav-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="nav-ul">
+          <li><a href="#">Serach</a></li>
+          <li><a href="#">Top</a></li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">Treding</a></li>
+          <li><a href="#">Lastest</a></li>
+          <li><a href="#">Upcoming</a></li>
+          <li><a href="#">Actors</a></li>
+          <li><a href="#">Subscription</a></li>
+          <li><a href="#">My Account</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
+      <section class="top-image-holder">
+        <div class="top-image"></div>
+        <div class="top-text">
+          <h1 class="animate__animated animate__fadeInLeft">Movie Hub</h1>
+          <p class="animate__animated animate__fadeInUp">Discover a vast collection of movies, explore genres and find your next favorite film today</p>
+        </div>
+      </section>
       <!-- code -->
     </main>
     <footer>
