@@ -17,3 +17,79 @@ body {
   padding: 0;
   font-family: "Courier New", Courier, monospace;
 }
+
+header {
+  width: 100vw;
+  height: 100dvh;
+}
+
+.header-image {
+  width: 100%;
+  height: 100%;
+
+  animation: animate-header-image-small 35s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .header-image {
+    width: 100%;
+    height: 100%;
+    animation: animate-header-image-large 35s linear infinite;
+  }
+}
+
+@keyframes animate-header-image-small {
+  0% {
+    background: url("../res/header-img-small/header-s-1.webp") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  25% {
+    background: url("../res/header-img-small/header-s-2.webp") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  50% {
+    background: url("../res/header-img-small/header-s-3.webp") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  75% {
+    background: url("../res/header-img-small/header-s-4.webp") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  100% {
+    background: url("../res/header-img-small/header-s-5.webp") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@keyframes animate-header-image-large {
+  0% {
+    background: url("../res/header-img-large/header-l-1.webp") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  25% {
+    background: url("../res/header-img-large/header-l-2.webp") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  50% {
+    background: url("../res/header-img-large/header-l-3.webp") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  75% {
+    background: url("../res/header-img-large/header-l-4.webp") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  100% {
+    background: url("../res/header-img-large/header-l-5.webp") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
