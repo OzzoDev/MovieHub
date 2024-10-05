@@ -41,7 +41,9 @@ nav {
   left: 0;
   right: 0;
   z-index: 2;
-  background-color: black;
+  background: rgba(0, 0, 0, 0.31);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
 }
 
 nav img {
@@ -69,7 +71,7 @@ nav ul {
   top: 0;
   right: 0;
   z-index: 1;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 a:focus {
@@ -110,6 +112,7 @@ nav ul li a:focus:before {
   position: relative;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 .top-image {
@@ -119,7 +122,8 @@ nav ul li a:focus:before {
   top: 0;
   left: 0;
   z-index: 1;
-  animation: animate-header-image-small 35s linear infinite;
+  display: inline-block;
+  animation: animate-header-image-small 35s linear infinite, zoom-effect 7s ease-in-out infinite;
 }
 
 .top-text {
@@ -140,6 +144,33 @@ nav ul li a:focus:before {
 .top-text p {
   width: min(300px, 100%);
   line-height: 20px;
+}
+
+.particle-container {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+  top: 20px;
+  bottom: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: rgba(136, 136, 136, 0.8);
+  border-radius: 50%;
+  animation: particle-motion linear infinite;
+}
+
+@keyframes particle-motion {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes animate-header-image-small {
@@ -198,9 +229,21 @@ nav ul li a:focus:before {
   }
 }
 
+@keyframes zoom-effect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @media (min-width: 768px) {
   .top-image {
-    animation: animate-header-image-large 35s linear infinite;
+    animation: animate-header-image-large 35s linear infinite, zoom-effect 7s ease-in-out infinite;
   }
   .nav-icon {
     display: none;
@@ -213,6 +256,7 @@ nav ul li a:focus:before {
     flex-direction: row;
     padding: 10px;
     font-size: clamp(0.7rem, 1vw, 1rem);
+    background-color: rgba(0, 0, 0, 0);
   }
 }
 
