@@ -250,18 +250,19 @@ nav ul li a:focus:before {
   }
 }
 
-.container {
-  position: relative;
-  padding: 100px;
+/*Search section*/
+
+.search-container {
+  padding: 50px 0 0 0;
   display: grid;
   place-items: center;
-  height: 400px;
+  gap: 50px;
   width: 100%;
   overflow: hidden;
   background-color: var(--color-dark-gray);
 }
 
-.input-container {
+.search-input-container {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -274,13 +275,13 @@ nav ul li a:focus:before {
   outline-offset: -4px;
 }
 
-.input-container img {
+.search-input-container img {
   width: 30px;
   height: 30px;
 }
 
-.input-container input {
-  width: 50px;
+.search-input-container input {
+  width: 150px;
   height: 30px;
   font-size: 1.2rem;
   border: 0;
@@ -288,61 +289,118 @@ nav ul li a:focus:before {
   background: transparent;
 }
 
-.input-container input::placeholder {
+.search-input-container input::placeholder {
   font-size: 1.2rem;
   color: rgb(186, 179, 179);
 }
 
-.input-container img {
+.search-input-container img {
   filter: invert(0.8);
 }
 
-.circle {
+.marquee-animation-container {
+  padding: 10px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  background-color: var(--color-charcoal);
+}
+
+.marquee-animation-container::before {
+  content: "";
   position: absolute;
-  /* left: 50%;
-  transform: translateX(-50%); */
-  width: 240px;
-  height: 240px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  z-index: 2;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.02) 100%);
+}
+
+.marquee-animation-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  z-index: 2;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.02) 100%);
+}
+
+.marquee-animation {
+  width: 100vw;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+  color: aliceblue;
+  background-color: var(--color-slate-gray);
+}
+
+.marquee-animation span {
+  white-space: nowrap;
+}
+
+.marquee-animation-rtl span {
+  animation: marquee 8s linear infinite reverse;
+}
+
+.marquee-animation-ltr span {
+  animation: marquee 8s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-1vw);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+.search-circle {
+  display: none;
+  position: absolute;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   filter: drop-shadow(3px 3px 1px #6b6b6e);
-  display: inline-block;
   animation: rotate-search 30s linear infinite forwards, hue-rotate-search 2s linear infinite forwards;
   box-shadow: inset 0 0 50px #fff, inset 20px 0 60px #e5a9e5, inset -20px 0 60px rgb(30, 91, 91), inset 20px 0 300px #e5a9e5, inset -20px 0 300px rgb(30, 91, 91), 0 0 5px #fff, -10px 0 60px #e5a9e5, 10px 0 60px rgb(30, 91, 91);
 }
 
-.circle span {
+.search-circle span {
+  position: absolute;
   display: inline-block;
   animation: rotate-search 30s linear infinite reverse;
   z-index: 3;
 }
 
-.circle span:nth-child(1) {
-  position: absolute;
+.search-circle span:nth-child(1) {
   left: 44%;
   top: -2%;
 }
-.circle span:nth-child(2) {
-  position: absolute;
+.search-circle span:nth-child(2) {
   left: 1%;
   top: 22%;
 }
-.circle span:nth-child(3) {
-  position: absolute;
+.search-circle span:nth-child(3) {
   left: -5%;
   top: 61%;
 }
-.circle span:nth-child(4) {
-  position: absolute;
+.search-circle span:nth-child(4) {
   right: -4%;
   top: 30%;
 }
-.circle span:nth-child(5) {
-  position: absolute;
+.search-circle span:nth-child(5) {
   right: 2%;
   top: 77%;
 }
-.circle span:nth-child(6) {
-  position: absolute;
+.search-circle span:nth-child(6) {
   left: 25%;
   top: 95%;
 }
@@ -381,6 +439,16 @@ nav ul li a:focus:before {
     padding: 10px;
     font-size: clamp(0.7rem, 1vw, 1rem);
     background-color: rgba(0, 0, 0, 0);
+  }
+  .search-container {
+    padding: 0;
+    height: 500px;
+  }
+  .marquee-animation-container {
+    display: none;
+  }
+  .search-circle {
+    display: inline-block;
   }
 }
 
