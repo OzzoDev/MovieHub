@@ -94,11 +94,12 @@ span {
 }
 
 .carousel-items .carousel-card figcaption {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding: 10px;
-  text-align: center;
   height: 100px;
   margin-top: -10px;
+  padding-top: 20px;
+  text-align: center;
   text-transform: uppercase;
   background-color: var(--color-steel-blue);
 }
