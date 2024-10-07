@@ -111,6 +111,19 @@ span {
   display: block;
 }
 
+.carousel-items .carousel-card figure::before {
+  content: attr(data-rank);
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 5px;
+  font-size: 2rem;
+  color: var(--text-color);
+  z-index: 100;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0.6) 20%);
+}
+
 .carousel-items .carousel-card figure::after {
   content: attr(data-rating);
   position: absolute;
@@ -125,10 +138,10 @@ span {
   justify-content: center;
   text-align: center;
   font-size: 1.2rem;
+  z-index: 100;
   color: var(--text-color);
   background: rgb(0, 0, 0);
   background: linear-gradient(0, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 60%);
-  z-index: 100;
 }
 
 .carousel-items .carousel-card p {
