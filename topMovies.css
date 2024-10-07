@@ -5,15 +5,13 @@
   --color-steel-blue: #606b87;
   --color-air-force-blue: #7182a7;
   --color-light-blue: #8299c9;
-  /*Only for this component*/
-  --background-color: black;
-  --text-color: hsl(0, 0%, 100%);
+  --text-color: #f1efef;
 }
 
 .sliced-heading-wrapper {
   display: grid;
   place-content: center;
-  background-color: var(--background-color);
+  background-color: black;
   padding: 10px;
   font-size: clamp(2rem, 10vw, 7rem);
   font-weight: 700;
@@ -85,13 +83,14 @@ span {
   grid-template-rows: 500px 200px;
   width: 100%;
   height: 700px;
-  color: aliceblue;
+  color: var(--text-color);
 }
 
 .carousel-items .carousel-card figure {
   grid-row: 1;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .carousel-items .carousel-card figcaption {
@@ -108,6 +107,28 @@ span {
   width: 100%;
   height: 450px;
   margin: 0;
+  position: relative;
+  display: block;
+}
+
+.carousel-items .carousel-card figure::after {
+  content: attr(data-rating);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 380px;
+  height: 40px;
+  padding-top: 25px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 60%);
+  z-index: 100;
 }
 
 .carousel-items .carousel-card p {
@@ -127,7 +148,7 @@ span {
   padding: 10px;
   cursor: pointer;
   z-index: 10;
-  color: aliceblue;
+  color: var(--text-color);
 }
 
 .carousel-button.left {
