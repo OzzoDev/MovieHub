@@ -28,9 +28,11 @@ nav img {
   height: 30px;
   margin: 10px 10px;
   position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
   cursor: pointer;
   display: inline-block;
-  z-index: 2;
 }
 .nav-icon span {
   background-color: #fff;
