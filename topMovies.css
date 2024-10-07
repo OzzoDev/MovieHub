@@ -96,7 +96,7 @@ span {
 .carousel-items .carousel-card figcaption {
   font-size: 1.5rem;
   padding: 10px;
-  height: 100px;
+  height: 80px;
   margin-top: -10px;
   padding-top: 20px;
   text-align: center;
@@ -148,7 +148,11 @@ span {
 .carousel-items .carousel-card p {
   grid-row: 2;
   margin: 0;
+  margin-top: 20px;
   padding: 20px;
+  letter-spacing: 1.2px;
+  line-height: 20px;
+  text-align: center;
   background-color: var(--color-steel-blue);
 }
 
@@ -194,6 +198,9 @@ span {
   }
   .carousel-items .carousel-card {
     flex: 0 0 50%;
+  }
+  .carousel-items .carousel-card p {
+    text-align: left;
   }
 }
 
