@@ -76,7 +76,6 @@ span {
 .carousel-items {
   display: flex;
   width: 100%;
-  padding: 20px 0 20px 0;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -100,7 +99,8 @@ span {
   padding: 10px;
   text-align: center;
   height: 100px;
-  margin-top: -5px;
+  margin-top: -10px;
+  text-transform: uppercase;
   background-color: var(--color-steel-blue);
 }
 
@@ -143,6 +143,10 @@ span {
 }
 
 @media (min-width: 768px) {
+  .carousel-items {
+    padding: 20px 0 20px 0;
+  }
+
   .carousel-items .carousel-card {
     padding-left: 10px;
     padding-right: 10px;
