@@ -55,7 +55,6 @@ span {
   transform: translateX(-0.02em);
 }
 
-/* Ensure the span doesn't affect layout for screen readers */
 .sliced-heading-wrapper .bottom[aria-hidden="true"] {
   pointer-events: none;
   position: absolute;
@@ -70,18 +69,52 @@ span {
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-radius: 10px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-dark-gray);
 }
 
-.carousel-images {
+.carousel-items {
   display: flex;
+  width: 100%;
+  padding: 20px 0 20px 0;
   transition: transform 0.5s ease-in-out;
 }
 
-.carousel-images img {
+.carousel-items .carousel-card {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-rows: 500px 200px;
   width: 100%;
-  border-radius: 10px;
+  height: 700px;
+  color: aliceblue;
+}
+
+.carousel-items .carousel-card figure {
+  grid-row: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-items .carousel-card figcaption {
+  font-size: 1.3rem;
+  padding: 10px;
+  text-align: center;
+  height: 100px;
+  margin-top: -5px;
+  background-color: var(--color-steel-blue);
+}
+
+.carousel-items .carousel-card figure img {
+  width: 100%;
+  height: 450px;
+  margin: 0;
+}
+
+.carousel-items .carousel-card p {
+  grid-row: 2;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--color-steel-blue);
 }
 
 .carousel-button {
@@ -90,11 +123,11 @@ span {
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
-  color: white;
   font-size: 2rem;
   padding: 10px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 10;
+  color: aliceblue;
 }
 
 .carousel-button.left {
@@ -109,15 +142,24 @@ span {
   outline: none;
 }
 
-/* Media Queries for Responsive Design */
 @media (min-width: 768px) {
-  .carousel-images img {
-    width: 50%;
+  .carousel-items .carousel-card {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .carousel-items .carousel-card:first-child {
+    padding-left: 20px;
+  }
+  .carousel-items .carousel-card:last-child {
+    padding-right: 20px;
+  }
+  .carousel-items .carousel-card {
+    flex: 0 0 50%;
   }
 }
 
 @media (min-width: 1024px) {
-  .carousel-images img {
-    width: 25%;
+  .carousel-items .carousel-card {
+    flex: 0 0 25%;
   }
 }

@@ -22,8 +22,8 @@ for (let i = 0; i < 200; i++) {
   container.appendChild(particle);
 }
 
-const carouselImages = document.querySelector(".carousel-images");
-const images = document.querySelectorAll(".carousel-images img");
+const carouselImages = document.querySelector(".carousel-items");
+const images = document.querySelectorAll(".carousel-items .carousel-card");
 const prevButton = document.querySelector(".carousel-button.left");
 const nextButton = document.querySelector(".carousel-button.right");
 
@@ -50,18 +50,14 @@ function updateVisibleImagesCount() {
 
 nextButton.addEventListener("click", () => {
   if (currentIndex < images.length - visibleImagesCount) {
-    currentIndex += visibleImagesCount;
-  } else {
-    currentIndex = 0; // Reset to first slide
+    currentIndex += 1;
   }
   updateCarousel();
 });
 
 prevButton.addEventListener("click", () => {
   if (currentIndex > 0) {
-    currentIndex -= visibleImagesCount;
-  } else {
-    currentIndex = images.length - visibleImagesCount; // Go to last slide set
+    currentIndex -= 1;
   }
   updateCarousel();
 });
