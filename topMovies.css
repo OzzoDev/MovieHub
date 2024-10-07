@@ -5,4 +5,90 @@
   --color-steel-blue: #606b87;
   --color-air-force-blue: #7182a7;
   --color-light-blue: #8299c9;
+  /*Only for this component*/
+  --background-color: black;
+  --text-color: hsl(0, 0%, 100%);
+}
+
+.sliced-heading-wrapper {
+  display: grid;
+  place-content: center;
+  background-color: var(--background-color);
+  padding: 10px;
+  font-size: clamp(2rem, 10vw, 7rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.sliced-heading-wrapper > div {
+  grid-area: 1/1/-1/-1;
+}
+.sliced-heading-wrapper .top {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+}
+.sliced-heading-wrapper .bottom {
+  clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+  color: transparent;
+  background: -webkit-linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background: linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translateX(-0.02em);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.carousel-button.left {
+  left: 10px;
+}
+
+.carousel-button.right {
+  right: 10px;
+}
+
+.carousel-button:focus {
+  outline: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+  .carousel-images img {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-images img {
+    width: 25%;
+  }
 }
