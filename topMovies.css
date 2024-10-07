@@ -104,9 +104,14 @@ span {
   height: 100%;
   backface-visibility: hidden;
   transition: 1s ease-in-out;
+  background-color: var(--color-steel-blue);
 }
 
 .carousel-card .card__face--back {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   transform: rotateY(0.5turn);
 }
 
@@ -169,7 +174,7 @@ span {
   background: linear-gradient(0, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 60%);
 }
 
-.carousel-items .carousel-card p {
+.carousel-items .carousel-card .card__face--front p {
   position: absolute;
   bottom: 0;
   grid-row: 2;
@@ -182,7 +187,6 @@ span {
   letter-spacing: 1.2px;
   line-height: 20px;
   text-align: center;
-  background-color: var(--color-steel-blue);
 }
 
 .carousel-button {
