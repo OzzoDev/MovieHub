@@ -23,7 +23,7 @@ for (let i = 0; i < 200; i++) {
 }
 
 const carouselImages = document.querySelector(".carousel-items");
-const images = document.querySelectorAll(".carousel-items .carousel-card");
+const cards = document.querySelectorAll(".carousel-items .carousel-card");
 const prevButton = document.querySelector(".carousel-button.left");
 const nextButton = document.querySelector(".carousel-button.right");
 
@@ -31,7 +31,7 @@ let currentIndex = 0;
 let visibleImagesCount = 1;
 
 function updateCarousel() {
-  const imageWidth = images[0].clientWidth;
+  const imageWidth = cards[0].clientWidth;
   carouselImages.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
 }
 
@@ -49,7 +49,7 @@ function updateVisibleImagesCount() {
 }
 
 nextButton.addEventListener("click", () => {
-  if (currentIndex < images.length - visibleImagesCount) {
+  if (currentIndex < cards.length - visibleImagesCount) {
     currentIndex += 1;
   }
   updateCarousel();
