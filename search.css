@@ -1,3 +1,12 @@
+:root {
+  --color-dark-gray: #2e2e2e;
+  --color-charcoal: #3e414a;
+  --color-slate-gray: #4f5667;
+  --color-steel-blue: #606b87;
+  --color-air-force-blue: #7182a7;
+  --color-light-blue: #8299c9;
+}
+
 .search-container {
   padding: 50px 0 0 0;
   display: grid;
@@ -37,11 +46,11 @@
 
 .search-input-container input::placeholder {
   font-size: 1.2rem;
-  color: rgb(186, 179, 179);
+  color: black;
 }
 
 .search-input-container img {
-  filter: invert(0.8);
+  filter: invert(0.2);
 }
 
 .marquee-animation-container {
@@ -82,12 +91,13 @@
   padding: 10px;
   display: flex;
   justify-content: flex-start;
-  gap: 50px;
+  gap: clamp(50px, 10vw, 100px);
   color: aliceblue;
   background-color: var(--color-slate-gray);
 }
 
 .marquee-animation span {
+  font-size: clamp(1rem, 4vw, 2.5rem);
   white-space: nowrap;
 }
 
@@ -101,18 +111,27 @@
 
 @keyframes marquee {
   0% {
-    transform: translateX(-1vw);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-100vw);
   }
 }
 
+@keyframes waterfall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
 .search-circle {
   display: none;
   position: absolute;
-  width: 350px;
-  height: 350px;
+  width: 390px;
+  height: 390px;
   border-radius: 50%;
   filter: drop-shadow(3px 3px 1px #6b6b6e);
   animation: rotate-search 30s linear infinite forwards, hue-rotate-search 2s linear infinite forwards;
@@ -124,6 +143,7 @@
   display: inline-block;
   animation: rotate-search 30s linear infinite reverse;
   z-index: 3;
+  color: aliceblue;
 }
 
 .search-circle span:nth-child(1) {
@@ -131,24 +151,36 @@
   top: -2%;
 }
 .search-circle span:nth-child(2) {
-  left: 1%;
-  top: 22%;
+  left: -1%;
+  top: 15%;
 }
 .search-circle span:nth-child(3) {
-  left: -5%;
-  top: 61%;
+  left: -7%;
+  top: 49%;
 }
 .search-circle span:nth-child(4) {
-  right: -4%;
-  top: 30%;
+  left: 2%;
+  top: 76%;
 }
 .search-circle span:nth-child(5) {
-  right: 2%;
-  top: 77%;
+  right: 6%;
+  top: 14%;
 }
 .search-circle span:nth-child(6) {
-  left: 25%;
-  top: 95%;
+  right: -6%;
+  top: 45%;
+}
+.search-circle span:nth-child(7) {
+  right: -3%;
+  top: 73%;
+}
+.search-circle span:nth-child(8) {
+  right: 24%;
+  top: 93%;
+}
+.search-circle span:nth-child(9) {
+  left: 26%;
+  top: 94%;
 }
 
 @keyframes rotate-search {
@@ -179,5 +211,88 @@
   }
   .search-circle {
     display: inline-block;
+  }
+}
+
+@media (min-width: 1440px) {
+  .search-container {
+    position: relative;
+  }
+  .marquee-animation-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .marquee-animation-container::after,
+  .marquee-animation-container::before {
+    display: none;
+  }
+
+  .marquee-animation {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 0;
+    padding: 100px;
+    position: absolute;
+  }
+  .marquee-animation-rtl {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0 0 0 20px;
+    width: 200px;
+  }
+
+  .marquee-animation-ltr {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0 20px 0 0;
+    width: 200px;
+    align-items: flex-end;
+  }
+
+  .marquee-animation-ltr::before,
+  .marquee-animation-rtl::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    z-index: 2;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.02) 100%);
+  }
+
+  .marquee-animation-ltr::after,
+  .marquee-animation-rtl::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    z-index: 2;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.02) 100%);
+  }
+
+  .marquee-animation span {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    white-space: nowrap;
+  }
+
+  .marquee-animation-rtl span {
+    animation: waterfall 8s linear infinite reverse;
+  }
+
+  .marquee-animation-ltr span {
+    animation: waterfall 8s linear infinite;
   }
 }
