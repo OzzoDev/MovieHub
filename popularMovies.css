@@ -92,7 +92,7 @@
   .popularMovies .movies .movie {
     width: 100%;
     display: flex;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/10;
   }
 
   .popularMovies .movies .movie img {
@@ -127,14 +127,22 @@
   }
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .popularMovies .movies {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+  .popularMovies .movies .movie {
+    aspect-ratio: 16/20;
+  }
+} */
 
 @media (min-width: 1440px) {
   .popularMovies .movies {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .popularMovies .movies .movie {
+    width: 100%;
+    display: flex;
+    aspect-ratio: 16/12;
   }
 }
