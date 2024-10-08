@@ -79,3 +79,32 @@
   height: 30%;
   background-color: green;
 }
+
+@media (min-width: 768px) {
+  .popularMovies .movies .movie {
+    display: flex;
+    aspect-ratio: 16/9;
+  }
+
+  .popularMovies .movies .movie .poster {
+    flex: 0 0 30%;
+    height: 100%;
+  }
+
+  .popularMovies .movies .movie .text {
+    flex: 0 0 70%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .popularMovies .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1440px) {
+  .popularMovies .movies {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
