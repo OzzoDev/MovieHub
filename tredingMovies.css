@@ -40,21 +40,23 @@
 }
 
 .tredingMovies .card-container .card .hidden-data {
-  width: max(200px, 50%);
+  width: max(200px, calc(50% + 1px));
+  padding: 10px;
   position: absolute;
   bottom: -200px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  background-color: red;
   transition: all 0.4s;
-  padding: 10px;
+  color: var(--text-color);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .tredingMovies .card-container .card .hidden-data .data-grid {
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  row-gap: 1rem;
   justify-content: space-between;
 }
 
