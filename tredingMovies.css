@@ -9,54 +9,46 @@
 }
 
 .tredingMovies {
+  padding-bottom: 400px;
 }
 
 .tredingMovies .card-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   width: 100%;
-  overflow: scroll;
-  scroll-snap-type: x mandatory;
+  height: 100%;
 }
 
 .tredingMovies .card-container .card {
-  width: 100%;
-  height: 400px;
-  padding: 10px;
-  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 200px;
+  transition: all 0.4s ease;
   overflow: hidden;
-  background-color: orangered;
 }
 
 .tredingMovies .card-container .inner-card {
   width: 100%;
   height: 100%;
-  transition: all 0.4s ease;
+  border: 1px solid black;
   background-color: green;
 }
-
-.tredingMovies .card-container .inner-card:hover,
-.tredingMovies .card-container .inner-card:focus {
-  /* transform: scale(1.1); */
-}
-
-/* @media (min-width: 768px) {
-  .tredingMovies .card-container .card {
-    min-width: 50%;
-    max-width: 50%;
+@media (max-width: 1023px) {
+  .tredingMovies .card-container .card:hover {
+    height: 400px;
   }
 }
-
-@media (min-width: 1024px) {
-  .tredingMovies .card-container .card {
-    min-width: 33%;
-    max-width: 33%;
-  }
-} */
 
 @media (min-width: 1024px) {
   .tredingMovies .card-container {
     flex-direction: row;
+  }
+  .tredingMovies .card-container .card {
+    height: 500px;
+  }
+  .tredingMovies .card-container .card:hover {
+    flex-grow: 3;
   }
 }
