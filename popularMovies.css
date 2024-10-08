@@ -9,8 +9,8 @@
 }
 
 .popularMovies {
+  padding-bottom: 300px;
   position: relative;
-  min-height: 1000px;
   background-color: var(--color-charcoal);
 }
 
@@ -20,15 +20,27 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 200px;
+  height: 300px;
   transform: rotate(180deg);
   background: url(res/dividers/blacksurf.svg) no-repeat;
   background-position: center;
   background-size: cover;
 }
 
+.popularMovies::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: url(res/dividers/blacksurf.svg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .popularMovies h2 {
-  padding-top: 200px;
+  padding-top: 300px;
   text-align: center;
   font-size: clamp(4rem, 8vw, 7rem);
   position: relative;
@@ -126,15 +138,6 @@
     font-size: clamp(1.2rem, 8vw, 1.4rem);
   }
 }
-
-/* @media (min-width: 1024px) {
-  .popularMovies .movies {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .popularMovies .movies .movie {
-    aspect-ratio: 16/20;
-  }
-} */
 
 @media (min-width: 1440px) {
   .popularMovies .movies {
