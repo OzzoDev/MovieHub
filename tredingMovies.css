@@ -13,6 +13,7 @@
 
 .tredingMovies .card-container {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   width: 100%;
   overflow: scroll;
@@ -20,8 +21,8 @@
 }
 
 .tredingMovies .card-container .card {
-  min-width: 100%;
-  height: 700px;
+  width: 100%;
+  height: 400px;
   padding: 10px;
   scroll-snap-align: start;
   overflow: hidden;
@@ -37,5 +38,25 @@
 
 .tredingMovies .card-container .inner-card:hover,
 .tredingMovies .card-container .inner-card:focus {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
+}
+
+/* @media (min-width: 768px) {
+  .tredingMovies .card-container .card {
+    min-width: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tredingMovies .card-container .card {
+    min-width: 33%;
+    max-width: 33%;
+  }
+} */
+
+@media (min-width: 1024px) {
+  .tredingMovies .card-container {
+    flex-direction: row;
+  }
 }
