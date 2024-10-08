@@ -38,7 +38,7 @@
   justify-items: center;
   padding: 1rem;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 4rem;
 }
 
 .latestMovies .gallary img {
@@ -64,6 +64,7 @@
 @media (min-width: 1920px) {
   .latestMovies .gallary {
     grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
   }
 }
 
