@@ -29,6 +29,7 @@
   height: 400px;
   transition: all 0.4s ease;
   overflow: hidden;
+  position: relative;
 }
 
 .tredingMovies .card-container .card img {
@@ -36,6 +37,37 @@
   height: 100%;
   display: block;
   margin: auto;
+}
+
+.tredingMovies .card-container .card .hidden-data {
+  width: max(200px, 50%);
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: red;
+  transition: all 0.4s;
+  padding: 10px;
+}
+
+.tredingMovies .card-container .card .hidden-data .data-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+}
+
+.tredingMovies .card-container .card .hidden-data .data-grid .align-left {
+  text-align: left;
+}
+
+.tredingMovies .card-container .card .hidden-data .data-grid .align-right {
+  text-align: right;
+}
+
+.tredingMovies .card-container .card:hover .hidden-data {
+  bottom: 0;
 }
 
 .tredingMovies .card-container .card1 {
