@@ -40,7 +40,7 @@
 }
 
 .tredingMovies .card-container .card .hidden-data {
-  width: max(200px, calc(50% + 1px));
+  width: 100%;
   padding: 10px;
   position: absolute;
   bottom: -200px;
@@ -55,17 +55,8 @@
 .tredingMovies .card-container .card .hidden-data .data-grid {
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   row-gap: 1rem;
-  justify-content: space-between;
-}
-
-.tredingMovies .card-container .card .hidden-data .data-grid .align-left {
-  text-align: left;
-}
-
-.tredingMovies .card-container .card .hidden-data .data-grid .align-right {
-  text-align: right;
 }
 
 .tredingMovies .card-container .card:hover .hidden-data {
@@ -112,5 +103,21 @@
   }
   .tredingMovies .card-container .card:hover {
     flex-grow: 3;
+  }
+  .tredingMovies .card-container .card .hidden-data .data-grid {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
+  }
+
+  .tredingMovies .card-container .card .hidden-data .data-grid .align-left {
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .tredingMovies .card-container .card .hidden-data .data-grid .align-right {
+    text-align: right;
+    white-space: nowrap;
   }
 }
