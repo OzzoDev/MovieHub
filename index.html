@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="headerAndNav.css" />
     <link rel="stylesheet" href="search.css" />
     <link rel="stylesheet" href="topMovies.css" />
+    <link rel="stylesheet" href="popularMovies.css" />
   </head>
   <body>
     <header>
@@ -43,7 +44,7 @@
         </div>
         <div class="particle-container"></div>
       </section>
-      <section class="serach">
+      <section class="serach" id="search-section">
         <div class="search-container">
           <div class="search-input-container">
             <img src="res/icons/search.png" alt="search icon" />
@@ -106,7 +107,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section id="topMovies-section">
         <div class="sliced-heading-wrapper">
           <h2 class="top">Top 10 movies</h2>
           <span class="bottom" aria-hidden="true">Top 10 movies</span>
@@ -276,6 +277,15 @@
           </div>
           <button class="carousel-button left">&#10094;</button>
           <button class="carousel-button right">&#10095;</button>
+        </div>
+      </section>
+      <section class="popularMovies" id="popularMovies-section">
+        <h2>Popular Movies 2024</h2>
+        <div class="movies">
+          <div class="movie">
+            <div class="poster"></div>
+            <div class="text"></div>
+          </div>
         </div>
       </section>
       <!-- code -->

@@ -1,0 +1,79 @@
+:root {
+  --color-dark-gray: #2e2e2e;
+  --color-charcoal: #3e414a;
+  --color-slate-gray: #4f5667;
+  --color-steel-blue: #606b87;
+  --color-air-force-blue: #7182a7;
+  --color-light-blue: #8299c9;
+  --text-color: #f1efef;
+}
+
+.popularMovies {
+  position: relative;
+  min-height: 1000px;
+  background-color: var(--color-charcoal);
+}
+
+.popularMovies::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  transform: rotate(180deg);
+  background: url(res/dividers/blacksurf.svg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.popularMovies h2 {
+  padding-top: 200px;
+  text-align: center;
+  font-size: clamp(4rem, 8vw, 7rem);
+  position: relative;
+  -webkit-text-fill-color: var(--text-color);
+}
+
+.popularMovies h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  width: 80%;
+  height: 5px;
+  background-color: var(--color-dark-gray);
+}
+
+.popularMovies h2::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  width: 80%;
+  height: 5px;
+  background-color: var(--color-dark-gray);
+}
+
+.popularMovies .movies {
+  margin-top: 100px;
+}
+
+.popularMovies .movies .movie {
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 10px;
+  background-color: red;
+}
+
+.popularMovies .movies .movie .poster {
+  width: 100%;
+  height: 70%;
+  background-color: blue;
+}
+
+.popularMovies .movies .movie .text {
+  width: 100%;
+  height: 30%;
+  background-color: green;
+}
