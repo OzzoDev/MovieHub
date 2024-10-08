@@ -23,7 +23,7 @@
   right: -200px;
   height: 100px;
   z-index: 0;
-  background: rgb(16, 17, 21);
+  background: rgb(0, 0, 0);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 20%, rgba(0, 0, 0, 0) 100%);
 }
 
