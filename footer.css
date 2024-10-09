@@ -11,8 +11,64 @@
 footer {
   padding: 100px;
   display: flex;
+  flex-direction: column;
+  gap: 3rem;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
   color: var(--text-color);
-  background-color: black;
+  background: url("res/dividers/flurf.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+footer h2 {
+  margin-bottom: 2rem;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+footer ul li a {
+  text-decoration: none;
+  position: relative;
+  color: var(--color-light-blue);
+}
+
+.link::before,
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  transition: all 0.3s;
+  background-color: var(--color-light-blue);
+}
+
+.link::before {
+  right: 0;
+  bottom: -0.3rem;
+}
+
+.link::after {
+  left: 0;
+  top: -0.3rem;
+}
+
+.link:hover::before,
+.link:hover::after {
+  width: 50%;
+}
+
+.social-icons {
+  flex-direction: row;
 }
