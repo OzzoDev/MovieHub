@@ -61,11 +61,16 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.3s;
   color: var(--text-color);
   background-color: var(--color-steel-blue);
 }
 
-.price {
+article:hover {
+  transform: scale(1.04);
+}
+
+article .price {
   position: relative;
 }
 
@@ -93,13 +98,44 @@ article ul {
   gap: 1rem;
 }
 
-article button {
+button {
   font-size: 1.2rem;
   padding: 10px;
   border-radius: 10px;
   margin: 0 20px;
   border: 0;
+  isolation: isolate;
+  position: relative;
+  outline: 2px solid var(--text-color);
   color: var(--text-color);
   background-color: transparent;
-  outline: 2px solid var(--text-color);
+}
+
+button::before,
+button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 51%;
+  transition: all 0.4s;
+  background-color: var(--color-slate-gray);
+}
+
+button::before {
+  top: 0;
+  left: 0;
+  width: 0;
+  opacity: 0.8;
+}
+
+button::after {
+  right: 0;
+  bottom: 0;
+  width: 0;
+  opacity: 0.5;
+}
+
+button:hover::before,
+button:hover::after {
+  width: 100%;
 }
