@@ -88,6 +88,7 @@ footer ul li a img {
 
 @media (min-width: 768px) {
   footer {
+    padding: 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: start;
