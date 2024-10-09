@@ -27,9 +27,16 @@ footer {
 
 footer h2 {
   margin-bottom: 2rem;
+  width: fit-content;
+}
+
+footer h2,
+footer p {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
 }
 
 footer ul {
+  width: fit-content;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -71,4 +78,77 @@ footer ul li a {
 
 .social-icons {
   flex-direction: row;
+}
+
+@media (min-width: 768px) {
+  footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    justify-items: flex-start;
+  }
+
+  .footer-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-item1,
+  .footer-item1 ul {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .footer-item2,
+  .footer-item2 ul {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .footer-item3 {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .footer-item4 {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer {
+    height: 400px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-item ul {
+    align-items: center;
+  }
+
+  .footer-item4 {
+    grid-column: 1/4;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1440px) {
+  footer {
+    height: 300px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-item4 {
+    grid-column: 4;
+  }
 }
