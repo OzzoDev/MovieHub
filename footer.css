@@ -16,13 +16,27 @@ footer {
   gap: 3rem;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-x: hidden;
   white-space: nowrap;
   text-align: center;
+  position: relative;
   color: var(--text-color);
   background: url("res/dividers/flurf.svg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: -100px;
+  height: 100px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 90%);
+  z-index: -1;
 }
 
 footer h2 {
