@@ -21,7 +21,6 @@ footer {
   color: var(--text-color);
   background: url("res/dividers/flurf.svg");
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
 }
 
@@ -49,6 +48,12 @@ footer ul li a {
   text-decoration: none;
   position: relative;
   color: var(--color-light-blue);
+}
+
+footer ul li a img {
+  width: 1.5rem;
+  height: 1.5rem;
+  filter: invert(1);
 }
 
 .link::before,
