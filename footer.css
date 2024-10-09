@@ -9,7 +9,7 @@
 }
 
 footer {
-  padding: 100px;
+  padding-top: 40px;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,6 @@ footer {
   overflow-x: hidden;
   white-space: nowrap;
   text-align: center;
-  position: relative;
   color: var(--text-color);
   background: url("res/dividers/flurf.svg");
   background-repeat: no-repeat;
