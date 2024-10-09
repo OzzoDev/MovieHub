@@ -135,12 +135,12 @@ nav ul li a:focus:before {
   left: 0;
   z-index: 1;
   display: inline-block;
-  animation: animate-header-image-small 35s linear infinite, zoom-effect 7s ease-in-out infinite;
+  animation: animate-header-image-small 35s ease infinite, zoom-effect 7s ease-in-out infinite;
 }
 
 .top-text {
   position: absolute;
-  top: 70%;
+  top: 65%;
   left: 8%;
   z-index: 2;
   color: aliceblue;
@@ -255,7 +255,7 @@ nav ul li a:focus:before {
 
 @media (min-width: 768px) {
   .top-image {
-    animation: animate-header-image-large 35s linear infinite, zoom-effect 7s ease-in-out infinite;
+    animation: animate-header-image-large 35s ease infinite, zoom-effect 7s ease-in-out infinite;
   }
   .nav-icon {
     display: none;
