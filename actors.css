@@ -50,6 +50,11 @@
 
 .actors .gallary figure {
   position: relative;
+  transition: all 0.3s;
+}
+
+.actors .gallary figure:hover {
+  transform: translateY(10px);
 }
 
 .actors .gallary figure::before {
@@ -74,8 +79,4 @@
   width: 120px;
   height: 240px;
   margin: auto;
-}
-
-.actors .gallary figure:hover {
-  transform: translateY(10px);
 }
