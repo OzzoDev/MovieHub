@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-dark-gray: #2e2e2e;
+  --color-charcoal: #3e414a;
+  --color-slate-gray: #4f5667;
+  --color-steel-blue: #606b87;
+  --color-air-force-blue: #7182a7;
+  --color-light-blue: #8299c9;
+  --text-color: #f1efef;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "Torja";
+  src: url("res/fonts/torja.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Torja", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, var(--color-dark-gray), var(--color-charcoal), var(--color-slate-gray));
+}
